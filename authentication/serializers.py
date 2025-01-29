@@ -25,19 +25,10 @@ class LoginSerializer(serializers.ModelSerializer):
     username = serializers.CharField()
     password = serializers.CharField(write_only=True,  max_length=8)
 
-    def validate(self, data):
-        username = data.get['username']
-        password = data.get['password']
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'password']
 
-        user = authenticate(username=username, password=password)
-        if not user:
-            raise serializers.ValidationError("invalid username or password")
-
-        refresh = RefreshToken.for_user(user)
-        return {
-            "refresh": refresh,
-            "access": refresh.access_token
-        }
 
 
 

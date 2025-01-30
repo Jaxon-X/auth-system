@@ -1,11 +1,11 @@
 # auth-system
 # Django Rest Framework Authentication with JWT
 
-This project implements user authentication using Django Rest Framework (DRF) and Simple JWT.
+This project implements user authentication using Django Rest Framework (DRF) and Simple JWT, with a custom login implementation.
 
 ## Features
 ✅ User Registration (Signup)  
-✅ User Login with JWT  
+✅ User Login with JWT (Custom Implementation)  
 ✅ Access & Refresh Token Mechanism  
 ✅ Token Refresh Endpoint  
 ✅ Secure API Authentication  
@@ -47,7 +47,7 @@ This project implements user authentication using Django Rest Framework (DRF) an
 ## API Endpoints
 
 ### 🔹 Register a new user
-**Endpoint:** `POST /api/register/`  
+**Endpoint:** `POST /user/api/register/`  
 **Request Body:**
 ```json
 {
@@ -65,8 +65,8 @@ This project implements user authentication using Django Rest Framework (DRF) an
 }
 ```
 
-### 🔹 Login and obtain tokens
-**Endpoint:** `POST /api/token/`
+### 🔹 Login and obtain tokens (Custom Implementation)
+**Endpoint:** `POST /user/api/login/`
 **Request Body:**
 ```json
 {
@@ -83,7 +83,7 @@ This project implements user authentication using Django Rest Framework (DRF) an
 ```
 
 ### 🔹 Refresh access token
-**Endpoint:** `POST /api/token/refresh/`
+**Endpoint:** `POST /user/api/token/refresh/`
 **Request Body:**
 ```json
 {
@@ -122,4 +122,5 @@ Pull requests are welcome! Feel free to improve the authentication system or add
 
 ## License
 This project is licensed under the MIT License.
+
 
